@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>QuickBuy - Products</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f2f2f2;
+        }
+
+        header {
+            background: #264653;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        nav {
+            background: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #264653;
+            font-weight: bold;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px #ccc;
+        }
+
+        .product h3 {
+            color: #264653;
+            font-size: 25px;
+        }
+
+        .price {
+            color: #e76f51;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        button {
+            background: #2a9d8f;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #21867a;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>QuickBuy</h1>
+    <p>Simple Online Shopping</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="CartServlet">Cart</a>
+    <a href="checkout.html">Checkout</a>
+</nav>
+
+<div class="container">
+
+    <h2>Our Products</h2>
+
+    <div class="products">
+
+        <!-- Product 1 -->
+        <div class="product">
+
+            <h3>Echo Earphones</h3>
+
+            <p>Audio</p>
+
+            <p>Clear sound and comfortable design.</p>
+
+            <p class="price">&#8377;799</p>
+
+            <form action="CartServlet" method="post">
+
+                <input type="hidden"
+                       name="productName"
+                       value="Echo Earphones">
+
+                <input type="hidden"
+                       name="price"
+                       value="799">
+
+                <button type="submit">
+                    Add to Cart
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Product 2 -->
+        <div class="product">
+
+            <h3>Fit Digital Watch</h3>
+
+            <p>Wearables</p>
+
+            <p>Stylish digital watch for daily use.</p>
+
+            <p class="price">&#8377;1899</p>
+
+            <form action="CartServlet" method="post">
+
+                <input type="hidden"
+                       name="productName"
+                       value="Fit Digital Watch">
+
+                <input type="hidden"
+                       name="price"
+                       value="1899">
+
+                <button type="submit">
+                    Add to Cart
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Product 3 -->
+        <div class="product">
+
+            <h3>Study LED Light</h3>
+
+            <p>Home</p>
+
+            <p>Bright LED light suitable for studying.</p>
+
+            <p class="price">&#8377;649</p>
+
+            <form action="CartServlet" method="post">
+
+                <input type="hidden"
+                       name="productName"
+                       value="Study LED Light">
+
+                <input type="hidden"
+                       name="price"
+                       value="649">
+
+                <button type="submit">
+                    Add to Cart
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Product 4 -->
+        <div class="product">
+
+            <h3>TypePro Keyboard</h3>
+
+            <p>Computer</p>
+
+            <p>Comfortable keyboard for everyday use.</p>
+
+            <p class="price">&#8377;1499</p>
+
+            <form action="CartServlet" method="post">
+
+                <input type="hidden"
+                       name="productName"
+                       value="TypePro Keyboard">
+
+                <input type="hidden"
+                       name="price"
+                       value="1499">
+
+                <button type="submit">
+                    Add to Cart
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Product 5 -->
+        <div class="product">
+
+            <h3>ChargeGo Power Bank</h3>
+
+            <p>Accessories</p>
+
+            <p>Portable power bank for your devices.</p>
+
+            <p class="price">&#8377;999</p>
+
+            <form action="CartServlet" method="post">
+
+                <input type="hidden"
+                       name="productName"
+                       value="ChargeGo Power Bank">
+
+                <input type="hidden"
+                       name="price"
+                       value="999">
+
+                <button type="submit">
+                    Add to Cart
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Product 6 -->
+        <div class="product">
+
+            <h3>MiniBeat Speaker</h3>
+
+            <p>Audio</p>
+
+            <p>Compact speaker with good sound quality.</p>
+
+            <p class="price">&#8377;1199</p>
+
+            <form action="CartServlet" method="post">
+
+                <input type="hidden"
+                       name="productName"
+                       value="MiniBeat Speaker">
+
+                <input type="hidden"
+                       name="price"
+                       value="1199">
+
+                <button type="submit">
+                    Add to Cart
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

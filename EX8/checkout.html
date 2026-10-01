@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>QuickBuy - Checkout</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #264653;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        .form-box {
+            width: 450px;
+            max-width: 90%;
+            background-color: white;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 90px;
+            resize: none;
+        }
+
+        .button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background-color: #e76f51;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #d65a3a;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>QuickBuy</h1>
+
+    <p>Checkout</p>
+
+</header>
+
+
+<div class="form-box">
+
+    <h2>Customer Information</h2>
+
+    <form action="OrderServlet" method="post">
+
+        <label>Customer Name</label>
+
+        <input type="text"
+               name="customerName"
+               placeholder="Enter your name"
+               required>
+
+
+        <label>Email</label>
+
+        <input type="email"
+               name="email"
+               placeholder="Enter your email"
+               required>
+
+
+        <label>Delivery Address</label>
+
+        <textarea name="address"
+                  placeholder="Enter delivery address"
+                  required></textarea>
+
+
+        <button type="submit" class="button">
+            Place Order
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>
