@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Portal Registration</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#eef3f8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    width:700px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    padding:30px;
+}
+
+h2{
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:25px;
+}
+
+table{
+    width:100%;
+}
+
+td{
+    padding:10px;
+    vertical-align:top;
+}
+
+label{
+    font-weight:bold;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=date],
+input[type=file],
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:15px;
+}
+
+textarea{
+    resize:none;
+}
+
+.error{
+    color:red;
+    font-size:13px;
+    margin-top:3px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#1565c0;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:17px;
+}
+
+button:hover{
+    background:#0d47a1;
+}
+
+#successMsg{
+    color:green;
+    font-weight:bold;
+    text-align:center;
+    margin-top:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Job Portal Registration Form</h2>
+
+<form id="registrationForm" novalidate>
+
+<table>
+
+<tr>
+<td><label>Full Name *</label></td>
+<td>
+<input type="text" id="fullName" placeholder="Enter Full Name">
+<div class="error" id="fullNameError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Email *</label></td>
+<td>
+<input type="email" id="email" placeholder="Enter Email">
+<div class="error" id="emailError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Phone Number *</label></td>
+<td>
+<input type="text" id="phone" placeholder="10 Digit Number">
+<div class="error" id="phoneError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Date of Birth *</label></td>
+<td>
+<input type="text" id="dob" placeholder="DD/MM/YYYY">
+<div class="error" id="dobError"></div>
+<div class="error" id="dobError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Gender *</label></td>
+<td>
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+<input type="radio" name="gender" value="Other"> Other
+<div class="error" id="genderError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Qualification *</label></td>
+<td>
+<select id="qualification">
+<option value="">Select Qualification</option>
+<option>B.E</option>
+<option>B.Tech</option>
+<option>B.Sc</option>
+<option>BCA</option>
+<option>M.E</option>
+<option>M.Tech</option>
+<option>MCA</option>
+</select>
+<div class="error" id="qualificationError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Experience *</label></td>
+<td>
+<input type="number" id="experience" placeholder="Years of Experience">
+<div class="error" id="experienceError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Skills *</label></td>
+<td>
+<input type="checkbox" name="skills" value="HTML"> HTML
+<input type="checkbox" name="skills" value="CSS"> CSS
+<input type="checkbox" name="skills" value="JavaScript"> JavaScript
+<input type="checkbox" name="skills" value="Python"> Python
+<div class="error" id="skillsError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Desired Job Title *</label></td>
+<td>
+<input type="text" id="jobTitle" placeholder="Software Developer">
+<div class="error" id="jobTitleError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Preferred Location *</label></td>
+<td>
+<select id="location">
+<option value="">Select Location</option>
+<option>Chennai</option>
+<option>Bangalore</option>
+<option>Hyderabad</option>
+<option>Coimbatore</option>
+<option>Pune</option>
+<option>Remote</option>
+</select>
+<div class="error" id="locationError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Address *</label></td>
+<td>
+<textarea id="address" rows="4"></textarea>
+<div class="error" id="addressError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Password *</label></td>
+<td>
+<input type="password" id="password">
+<div class="error" id="passwordError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Confirm Password *</label></td>
+<td>
+<input type="password" id="confirmPassword">
+<div class="error" id="confirmPasswordError"></div>
+</td>
+</tr>
+
+<tr>
+<td><label>Upload Resume *</label></td>
+<td>
+<input type="file" id="resume">
+<div class="error" id="resumeError"></div>
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+<input type="checkbox" id="terms">
+I agree to the Terms & Conditions
+<div class="error" id="termsError"></div>
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+<button type="submit">Register</button>
+<div id="successMsg"></div>
+</td>
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+<script>
+
+document.getElementById("registrationForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let isValid = true;
+
+    // Clear Previous Errors
+    document.getElementById("fullNameError").textContent="";
+    document.getElementById("emailError").textContent="";
+    document.getElementById("phoneError").textContent="";
+    document.getElementById("dobError").textContent="";
+    document.getElementById("genderError").textContent="";
+    document.getElementById("qualificationError").textContent="";
+    document.getElementById("experienceError").textContent="";
+    document.getElementById("skillsError").textContent="";
+    document.getElementById("jobTitleError").textContent="";
+    document.getElementById("locationError").textContent="";
+    document.getElementById("addressError").textContent="";
+    document.getElementById("passwordError").textContent="";
+    document.getElementById("confirmPasswordError").textContent="";
+    document.getElementById("resumeError").textContent="";
+    document.getElementById("termsError").textContent="";
+    document.getElementById("successMsg").textContent="";
+
+    // Get Values
+    let fullName=document.getElementById("fullName").value.trim();
+    let email=document.getElementById("email").value.trim();
+    let phone=document.getElementById("phone").value.trim();
+    let dob=document.getElementById("dob").value;
+    let qualification=document.getElementById("qualification").value;
+    let experience=document.getElementById("experience").value;
+    let jobTitle=document.getElementById("jobTitle").value.trim();
+    let location=document.getElementById("location").value;
+    let address=document.getElementById("address").value.trim();
+    let password=document.getElementById("password").value;
+    let confirmPassword=document.getElementById("confirmPassword").value;
+    let resume=document.getElementById("resume").value;
+    let terms=document.getElementById("terms").checked;
+
+    // Patterns
+    let namePattern=/^[A-Za-z ]+$/;
+    let emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let phonePattern=/^[0-9]{10}$/;
+    let passwordPattern=/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&*!]).{8,}$/;
+
+    // Name
+    if(fullName==""){
+        document.getElementById("fullNameError").textContent="Enter Full Name";
+        isValid=false;
+    }
+    else if(!namePattern.test(fullName)){
+        document.getElementById("fullNameError").textContent="Only letters are allowed";
+        isValid=false;
+    }
+
+    // Email
+    if(email==""){
+        document.getElementById("emailError").textContent="Enter Email";
+        isValid=false;
+    }
+    else if(!emailPattern.test(email)){
+        document.getElementById("emailError").textContent="Invalid Email";
+        isValid=false;
+    }
+
+    // Phone
+    if(phone==""){
+        document.getElementById("phoneError").textContent="Enter Phone Number";
+        isValid=false;
+    }
+    else if(!phonePattern.test(phone)){
+        document.getElementById("phoneError").textContent="Phone Number must contain 10 digits";
+        isValid=false;
+    }
+
+    // DOB
+    if(dob==""){
+        document.getElementById("dobError").textContent="Select Date of Birth";
+        isValid=false;
+    }
+
+    // Gender
+    let gender=document.getElementsByName("gender");
+    let genderSelected=false;
+
+    for(let i=0;i<gender.length;i++){
+        if(gender[i].checked){
+            genderSelected=true;
+        }
+    }
+
+    if(!genderSelected){
+        document.getElementById("genderError").textContent="Select Gender";
+        isValid=false;
+    }
+
+    // Qualification
+    if(qualification==""){
+        document.getElementById("qualificationError").textContent="Select Qualification";
+        isValid=false;
+    }
+
+    // Experience
+    if(experience==""){
+        document.getElementById("experienceError").textContent="Enter Experience";
+        isValid=false;
+    }
+
+    // Skills
+    let skills=document.getElementsByName("skills");
+    let skillSelected=false;
+
+    for(let i=0;i<skills.length;i++){
+        if(skills[i].checked){
+            skillSelected=true;
+        }
+    }
+
+    if(!skillSelected){
+        document.getElementById("skillsError").textContent="Select at least one skill";
+        isValid=false;
+    }
+
+    // Job Title
+    if(jobTitle==""){
+        document.getElementById("jobTitleError").textContent="Enter Job Title";
+        isValid=false;
+    }
+
+    // Location
+    if(location==""){
+        document.getElementById("locationError").textContent="Select Location";
+        isValid=false;
+    }
+
+    // Address
+    if(address==""){
+        document.getElementById("addressError").textContent="Enter Address";
+        isValid=false;
+    }
+
+    // Password
+    if(password==""){
+        document.getElementById("passwordError").textContent="Enter Password";
+        isValid=false;
+    }
+    else if(!passwordPattern.test(password)){
+        document.getElementById("passwordError").textContent="Minimum 8 characters, uppercase, lowercase, number and special character required.";
+        isValid=false;
+    }
+
+    // Confirm Password
+    if(confirmPassword==""){
+        document.getElementById("confirmPasswordError").textContent="Confirm Password";
+        isValid=false;
+    }
+    else if(password!=confirmPassword){
+        document.getElementById("confirmPasswordError").textContent="Passwords do not match";
+        isValid=false;
+    }
+
+    // Resume
+    if(resume==""){
+        document.getElementById("resumeError").textContent="Upload Resume";
+        isValid=false;
+    }
+    else{
+        let extension=resume.split('.').pop().toLowerCase();
+
+        if(extension!="pdf" && extension!="doc" && extension!="docx"){
+            document.getElementById("resumeError").textContent="Only PDF, DOC and DOCX files allowed";
+            isValid=false;
+        }
+    }
+
+    // Terms
+    if(!terms){
+        document.getElementById("termsError").textContent="Accept Terms & Conditions";
+        isValid=false;
+    }
+
+    // Success
+    if(isValid){
+        document.getElementById("successMsg").textContent="Registration Successful!";
+        document.getElementById("registrationForm").reset();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
