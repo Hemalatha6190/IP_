@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Products</title>
+
+<style>
+
+body{
+background:#F0FFF0;
+font-family:Arial;
+text-align:center;
+}
+
+h1{
+color:darkblue;
+}
+
+h2{
+color:red;
+}
+
+.nav{
+background:#003366;
+padding:15px;
+}
+
+.nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+margin:20px;
+}
+
+.nav a:hover{
+color:yellow;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+width:80%;
+}
+
+th{
+background:green;
+color:white;
+}
+
+td,th{
+border:1px solid black;
+padding:15px;
+}
+
+img{
+border-radius:10px;
+border:2px solid blue;
+}
+
+button{
+background:green;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:orange;
+}
+
+#cart{
+width:350px;
+height:180px;
+border:3px dashed red;
+margin:auto;
+background:#FFFFCC;
+padding:10px;
+}
+
+video{
+border:3px solid blue;
+border-radius:10px;
+}
+
+</style>
+
+<script>
+
+function allowDrop(ev){
+ev.preventDefault();
+}
+
+function drag(ev){
+ev.dataTransfer.setData("text",ev.target.id);
+}
+
+function drop(ev){
+ev.preventDefault();
+var data=ev.dataTransfer.getData("text");
+ev.target.appendChild(document.getElementById(data));
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1>ONLINE SHOPPING SYSTEM</h1>
+
+<h2>Products</h2>
+
+<div class="nav">
+
+<a href="Home.html">Home</a>
+
+<a href="Categories.html">Categories</a>
+
+<a href="Products.html">Products</a>
+
+<a href="Login.html">Login</a>
+
+<a href="Registration.html">Registration</a>
+
+</div>
+
+<br>
+
+<table>
+
+<tr>
+
+<th>Product</th>
+<th>Image</th>
+<th>Price</th>
+
+</tr>
+
+<tr>
+
+<td>Men Shirt</td>
+
+<td>
+
+<img id="shirt"
+src="shirt.jpg"
+width="150"
+height="150"
+draggable="true"
+ondragstart="drag(event)">
+
+</td>
+
+<td>₹799</td>
+
+</tr>
+
+<tr>
+
+<td>Sports Shoes</td>
+
+<td>
+
+<img id="shoe"
+src="shoe.jpg"
+width="150"
+height="150"
+draggable="true"
+ondragstart="drag(event)">
+
+</td>
+
+<td>₹1499</td>
+
+</tr>
+
+<tr>
+
+<td>Smart Watch</td>
+
+<td>
+
+<img id="watch"
+src="watch.jpg"
+width="150"
+height="150"
+draggable="true"
+ondragstart="drag(event)">
+
+</td>
+
+<td>₹2999</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<h2>Drag Products into Cart</h2>
+
+<div id="cart"
+ondrop="drop(event)"
+ondragover="allowDrop(event)">
+
+<h3>🛒 Shopping Cart</h3>
+
+</div>
+
+<br>
+
+<h2>Product Video</h2>
+
+<video width="500" controls>
+
+<source src="product.mp4" type="video/mp4">
+
+</video>
+
+<br><br>
+
+<button>BUY NOW</button>
+
+<br><br>
+
+<p><b>© 2026 Online Shopping System</b></p>
+
+</body>
+
+</html>
