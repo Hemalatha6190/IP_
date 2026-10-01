@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Purchase Form</title>
+</head>
+
+<body bgcolor="#FFF0F5">
+
+<center>
+
+<h1><font color="darkblue">ONLINE SHOPPING SYSTEM</font></h1>
+<h2><font color="red">Purchase Form</font></h2>
+
+<hr color="blue">
+
+<table cellpadding="10" bgcolor="lightblue">
+<tr>
+<td><a href="Home.html">Home</a></td>
+<td><a href="Categories.html">Categories</a></td>
+<td><a href="Products.html">Products</a></td>
+<td><a href="Purchase.html">Purchase</a></td>
+<td><a href="Contact.html">Contact</a></td>
+</tr>
+</table>
+
+<hr color="blue">
+
+<form>
+
+<fieldset>
+
+<legend><b>Customer Details</b></legend>
+
+<label>Customer Name:</label><br>
+<input type="text" size="40" placeholder="Enter your name" required><br><br>
+
+<label>Email:</label><br>
+<input type="email" size="40" placeholder="Enter your email" required><br><br>
+
+<label>Phone Number:</label><br>
+<input type="tel" size="40" placeholder="Enter phone number"><br><br>
+
+<label>Address:</label><br>
+<textarea rows="4" cols="42" placeholder="Enter your address"></textarea>
+<br><br>
+
+<label>Gender:</label><br>
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<input type="radio" name="gender"> Other
+<br><br>
+
+<label>Category:</label><br>
+
+<select>
+
+<optgroup label="Fashion">
+<option>Men Wear</option>
+<option>Women Wear</option>
+<option>Footwear</option>
+</optgroup>
+
+<optgroup label="Electronics">
+<option>Mobile</option>
+<option>Laptop</option>
+<option>Smart Watch</option>
+</optgroup>
+
+</select>
+
+<br><br>
+
+<label>Product:</label><br>
+
+<input list="products">
+
+<datalist id="products">
+<option value="T-Shirt">
+<option value="Jeans">
+<option value="Shoes">
+<option value="Smart Watch">
+<option value="Laptop">
+</datalist>
+
+<br><br>
+
+<label>Quantity:</label><br>
+<input type="number" min="1" max="10">
+
+<br><br>
+
+<label>Delivery Date:</label><br>
+<input type="date">
+
+<br><br>
+
+<label>Payment Method:</label><br>
+
+<input type="radio" name="pay"> Cash on Delivery<br>
+<input type="radio" name="pay"> UPI<br>
+<input type="radio" name="pay"> Debit/Credit Card
+
+<br><br>
+
+<label>Comments:</label><br>
+
+<textarea rows="5" cols="42"></textarea>
+
+<br><br>
+
+<button type="submit">Place Order</button>
+
+<button type="reset">Reset</button>
+
+</fieldset>
+
+</form>
+
+<hr color="blue">
+
+<font color="gray">
+© 2026 Online Shopping System
+</font>
+
+</center>
+
+</body>
+</html>
