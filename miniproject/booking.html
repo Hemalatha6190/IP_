@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Book Movie Ticket</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Online Movie Ticket Booking</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="movies.html">Movies</a>
+        <a href="booking.html">Book Ticket</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Book Your Movie Ticket</h2>
+
+    <form action="BookingServlet" method="post">
+
+        <label>Customer Name:</label>
+        <input type="text"
+               name="customer_name"
+               placeholder="Enter your name"
+               required>
+
+        <br><br>
+
+        <label>Select Movie:</label>
+        <select name="movie_id" required>
+<option value="1">Leo - Rs. 150</option>
+<option value="2">Vikram - Rs. 180</option>
+<option value="3">Interstellar - Rs. 200</option>
+<option value="4">Avatar 2 - Rs. 220</option>
+<option value="5">Jailer - Rs. 160</option>
+        </select>
+
+        <br><br>
+
+        <label>Show Date:</label>
+        <input type="date"
+               name="show_date"
+               required>
+
+        <br><br>
+
+        <label>Show Time:</label>
+        <select name="show_time" required>
+            <option value="">-- Select Time --</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="02:00 PM">02:00 PM</option>
+            <option value="06:00 PM">06:00 PM</option>
+            <option value="10:00 PM">10:00 PM</option>
+        </select>
+
+        <br><br>
+
+        <label>Number of Tickets:</label>
+        <input type="number"
+               name="ticket_count"
+               min="1"
+               max="10"
+               placeholder="Enter number of tickets"
+               required>
+
+        <br><br>
+
+        <button type="submit" class="button">
+            Book Ticket
+        </button>
+
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Online Movie Ticket Booking System</p>
+</footer>
+
+<script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+
+        let customerName =
+            document.querySelector("[name='customer_name']").value.trim();
+
+        let ticketCount =
+            document.querySelector("[name='ticket_count']").value;
+
+        if (customerName === "") {
+            alert("Please enter customer name.");
+            event.preventDefault();
+        } else if (ticketCount < 1 || ticketCount > 10) {
+            alert("Ticket count must be between 1 and 10.");
+            event.preventDefault();
+        } else {
+            alert("Booking details are valid. Processing booking...");
+        }
+
+    });
+</script>
+
+</body>
+</html>

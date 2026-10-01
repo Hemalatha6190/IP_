@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Movies</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 30px;
+        }
+
+        .movie-card {
+            width: 230px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 0 10px #cccccc;
+        }
+
+        .movie-card img {
+            width: 200px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .movie-card h3 {
+            color: #222222;
+            margin: 12px 0 8px;
+        }
+
+        .movie-card p {
+            margin: 7px 0;
+            color: #555555;
+        }
+
+        .price {
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .book-button {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 18px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .book-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Online Movie Ticket Booking</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="movies.html">Movies</a>
+        <a href="booking.html">Book Ticket</a>
+    </nav>
+</header>
+
+<h2 style="text-align: center;">Available Movies</h2>
+
+<div class="movie-container">
+
+    <div class="movie-card">
+        <img src="images/leo.jpg" alt="Leo Movie Poster">
+
+        <h3>Leo</h3>
+
+        <p>Tamil | Action</p>
+
+        <p class="price">&#8377;150</p>
+
+        <a class="book-button" href="booking.html">Book Now</a>
+    </div>
+
+    <div class="movie-card">
+        <img src="images/vikram.jpg" alt="Vikram Movie Poster">
+
+        <h3>Vikram</h3>
+
+        <p>Tamil | Action</p>
+
+        <p class="price">&#8377;180</p>
+
+        <a class="book-button" href="booking.html">Book Now</a>
+    </div>
+
+    <div class="movie-card">
+        <img src="images/interstellar.jpg" alt="Interstellar Movie Poster">
+
+        <h3>Interstellar</h3>
+
+        <p>English | Sci-Fi</p>
+
+        <p class="price">&#8377;200</p>
+
+        <a class="book-button" href="booking.html">Book Now</a>
+    </div>
+
+    <div class="movie-card">
+        <img src="images/avatar2.jpg" alt="Avatar 2 Movie Poster">
+
+        <h3>Avatar 2</h3>
+
+        <p>English | Adventure</p>
+
+        <p class="price">&#8377;220</p>
+
+        <a class="book-button" href="booking.html">Book Now</a>
+    </div>
+
+    <div class="movie-card">
+        <img src="images/jailer.jpg" alt="Jailer Movie Poster">
+
+        <h3>Jailer</h3>
+
+        <p>Tamil | Action</p>
+
+        <p class="price">&#8377;160</p>
+
+        <a class="book-button" href="booking.html">Book Now</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Online Movie Ticket Booking System</p>
+</footer>
+
+</body>
+</html>
